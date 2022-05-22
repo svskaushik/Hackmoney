@@ -22,6 +22,7 @@ import NativeBalance from "components/NativeBalance";
 import "./style.css";
 import Text from "antd/lib/typography/Text";
 import MenuItems from "./components/MenuItems";
+import Portfolio from "components/Portfolio";
 const { Header, Sider, Content } = Layout;
 
 const styles = {
@@ -152,6 +153,7 @@ const App = () => {
                     <ERC20Transfers />
                   </Route>
                   <Route path="/dashboard">
+                    <Portfolio />
                     <Tabs defaultActiveKey="1" style={{ alignItems: "center" }}>
                       <Tabs.TabPane tab={<span>Tokens</span>} key="1">
                         <ERC20Balance />
