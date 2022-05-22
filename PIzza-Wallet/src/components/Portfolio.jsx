@@ -90,12 +90,12 @@ const Portfolio = () => {
 
         if (res) {
           res.data.items.map(function (index) {
-            console.log(
-              index.contract_name,
-              index.holdings.map(function (e) {
-                return e.close.quote;
-              }),
-            );
+            // console.log(
+            //   index.contract_name,
+            //   index.holdings.map(function (e) {
+            //     return e.close.quote;
+            //   }),
+            // );
             index.holdings.map(function (e, index) {
               if (e.close.quote >= 0.01) {
                 _value[index] > 0
@@ -113,7 +113,7 @@ const Portfolio = () => {
         setTimeStamps(_timeStamps.reverse());
         setValue(_value.reverse());
         setIsLoading(false);
-        console.log(res, value, _value);
+        // console.log(res, value, _value);
       };
 
       fetch();
@@ -192,9 +192,9 @@ const Portfolio = () => {
             plugins: {
               title: {
                 display: true,
-                text: `Portfolio Value $ ${value[value.length - 1]?.toFixed(
-                  2,
-                )}`,
+                text: `Portfolio Value $ ${
+                  value[value.length - 1]?.toFixed(2) || "(no values found)"
+                }`,
                 color: "#fff",
               },
             },
