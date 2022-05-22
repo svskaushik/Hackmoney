@@ -153,15 +153,20 @@ const App = () => {
                     <ERC20Transfers />
                   </Route>
                   <Route path="/dashboard">
-                    <Portfolio />
-                    <Tabs defaultActiveKey="1" style={{ alignItems: "center" }}>
-                      <Tabs.TabPane tab={<span>Tokens</span>} key="1">
-                        <ERC20Balance />
-                      </Tabs.TabPane>
-                      <Tabs.TabPane tab={<span>NFTs</span>} key="2">
-                        <NFTBalance />
-                      </Tabs.TabPane>
-                    </Tabs>
+                    <div>
+                      <Portfolio />
+                      <Tabs
+                        defaultActiveKey="1"
+                        style={{ alignItems: "center" }}
+                      >
+                        <Tabs.TabPane tab={<span>Tokens</span>} key="1">
+                          <ERC20Balance />
+                        </Tabs.TabPane>
+                        <Tabs.TabPane tab={<span>NFTs</span>} key="2">
+                          <NFTBalance />
+                        </Tabs.TabPane>
+                      </Tabs>
+                    </div>
                   </Route>
                   <Route path="/bridge">
                     <Bridge />
